@@ -73,7 +73,8 @@ var (
 )
 
 // ParseCertificate is a cached version of x509.ParseCertificate. Cache key is
-//  string(der)
+//
+//	string(der)
 func ParseCertificate(der []byte) (*x509.Certificate, error) {
 	if !PemCacheEnabled {
 		cert, err := x509.ParseCertificate(der)
